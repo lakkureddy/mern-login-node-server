@@ -10,7 +10,7 @@ app.use(express.json());
 
 const refVar = mongoDb.MongoClient;
 app.post("/login", (req, res) => {
-    refVar.connect(process.env.MONGO_CLOUD_URL, (err, connection) => {
+    refVar.connect("mongodb+srv://admin:admin@cluster0.kfwlo.mongodb.net/mern-login-db?retryWrites=true&w=majority", (err, connection) => {
         if (err) throw err;
         else {
             const db = connection.db("mern-login-db");
